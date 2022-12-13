@@ -1,0 +1,2024 @@
+{
+  "name": "初めてのアクション",
+  "type": "action",
+  "valid": true,
+  "status": "Available",
+  "created": "2022-12-13T02:44:11.906Z",
+  "updated": "2022-12-13T14:55:08.258Z",
+  "language": "ja",
+  "skill_id": "f3a24c3f-2c42-41b3-bcff-a10d8703a49b",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "step_853",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "ピザの種類を教えて"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "マルゲリータ",
+                      "value": {
+                        "input": {
+                          "text": "マルゲリータ"
+                        }
+                      }
+                    },
+                    {
+                      "label": "シーフード",
+                      "value": {
+                        "input": {
+                          "text": "シーフード"
+                        }
+                      }
+                    },
+                    {
+                      "label": "ペパロニ",
+                      "value": {
+                        "input": {
+                          "text": "ペパロニ"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "分かりませんでした。有効なオプションを選択してください:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_18964",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_853",
+            "next_step": "step_594"
+          },
+          {
+            "step": "step_594",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "サイズを教えて"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Sサイズ",
+                      "value": {
+                        "input": {
+                          "text": "Sサイズ"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Mサイズ",
+                      "value": {
+                        "input": {
+                          "text": "Mサイズ"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Lサイズ",
+                      "value": {
+                        "input": {
+                          "text": "Lサイズ"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "分かりませんでした。有効なオプションを選択してください:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_48463",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_594",
+            "next_step": "step_448"
+          },
+          {
+            "step": "step_448",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "配達時刻を教えて。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "申し訳ございません。分かりませんでした。回答を言い換えていただけますか。"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-time",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_448",
+            "next_step": "step_926"
+          },
+          {
+            "step": "step_926",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "ご注文内容\n\n-ピザの種類="
+                          },
+                          {
+                            "variable": "step_853"
+                          },
+                          {
+                            "scalar": "\n\n-サイズ="
+                          },
+                          {
+                            "variable": "step_594"
+                          },
+                          {
+                            "scalar": "\n\n-配達時刻="
+                          },
+                          {
+                            "variable": "step_448"
+                          },
+                          {
+                            "scalar": "\n\nでよろしいですか？"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "OK",
+                      "value": {
+                        "input": {
+                          "text": "OK"
+                        }
+                      }
+                    },
+                    {
+                      "label": "修正",
+                      "value": {
+                        "input": {
+                          "text": "修正"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "分かりませんでした。有効なオプションを選択してください:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_36729",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_926",
+            "next_step": "step_587"
+          },
+          {
+            "step": "step_587",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "ご注文を承りました。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_853"
+                  },
+                  "skill_variable": "pizza"
+                },
+                {
+                  "value": {
+                    "variable": "step_594"
+                  },
+                  "skill_variable": "size"
+                },
+                {
+                  "value": {
+                    "variable": "step_448"
+                  },
+                  "skill_variable": "time"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_587",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_926"
+                },
+                {
+                  "value": "OK",
+                  "from_entity": "entity_36729"
+                }
+              ]
+            },
+            "next_step": "step_281"
+          },
+          {
+            "step": "step_281",
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_35393",
+                "parameters": null,
+                "result_variable": "step_281_result_1"
+              }
+            },
+            "variable": "step_281",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_926"
+                },
+                {
+                  "value": "OK",
+                  "from_entity": "entity_36729"
+                }
+              ]
+            },
+            "next_step": "step_937"
+          },
+          {
+            "step": "step_937",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "最初から注文をやり直してください。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_853"
+                },
+                {
+                  "variable": "step_594"
+                },
+                {
+                  "variable": "step_448"
+                },
+                {
+                  "variable": "step_926"
+                }
+              ]
+            },
+            "variable": "step_937",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_926"
+                },
+                {
+                  "value": "修正",
+                  "from_entity": "entity_36729"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "ピザの注文",
+        "action": "action_10576",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_10576_intent_15035"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "variable": "step_281",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_281_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "配達時刻を教えて。",
+            "variable": "step_448",
+            "data_type": "time"
+          },
+          {
+            "title": "ご注文を承りました。",
+            "variable": "step_587",
+            "data_type": "any"
+          },
+          {
+            "title": "サイズを教えて",
+            "variable": "step_594",
+            "data_type": "any"
+          },
+          {
+            "title": "ピザの種類を教えて",
+            "variable": "step_853",
+            "data_type": "any"
+          },
+          {
+            "title": "ご注文内容 -ピザの種類={variable} -サイズ={variable} -配達時刻={variable} でよろしいです",
+            "variable": "step_926",
+            "data_type": "any"
+          },
+          {
+            "title": "最初から注文をやり直してください。",
+            "variable": "step_937",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_401",
+            "context": {
+              "variables": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {
+                    "zendesk": {
+                      "department": "test"
+                    }
+                  }
+                },
+                "agent_available": {
+                  "message": "空いているエージェントに送信します"
+                },
+                "agent_unavailable": {
+                  "message": "現在、空いているエージェントはいません"
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_401"
+          }
+        ],
+        "title": "有人エージェント",
+        "action": "action_13238",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_13238_intent_5472"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "variable": "step_401",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_6727",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_166",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "お名前を教えてください"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_166",
+            "next_step": "step_769"
+          },
+          {
+            "step": "step_769",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "メールアドレスを教えてください"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_769",
+            "next_step": "step_758"
+          },
+          {
+            "step": "step_758",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "注文内容を登録します"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "callout",
+              "callout": {
+                "path": "/api/v2/requests.json",
+                "type": "integration_interaction",
+                "method": "POST",
+                "internal": {
+                  "catalog_item_id": "b8974cec-1a94-482a-88b5-70509783b805"
+                },
+                "request_mapping": {
+                  "body": [
+                    {
+                      "value": {
+                        "skill_variable": "pizza"
+                      },
+                      "parameter": "request.subject"
+                    },
+                    {
+                      "value": {
+                        "expression": "\"{'サイズ': ${size}, '配達時刻': ${time.value}}\""
+                      },
+                      "parameter": "request.comment.body"
+                    },
+                    {
+                      "value": {
+                        "variable": "step_166"
+                      },
+                      "parameter": "request.requester.name"
+                    },
+                    {
+                      "value": {
+                        "variable": "step_769"
+                      },
+                      "parameter": "request.requester.email"
+                    }
+                  ]
+                },
+                "result_variable": "step_758_result_1"
+              }
+            },
+            "variable": "step_758",
+            "next_step": "step_139"
+          },
+          {
+            "step": "step_139",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "**チケット番号を控えておいてください。問い合わせ時に必要になります。**\n\nチケット番号: "
+                          },
+                          {
+                            "skill_variable": "TicketNumber"
+                          },
+                          {
+                            "scalar": "\n\n<br />\n\n\n\n--debug--\n\n\n\n"
+                          },
+                          {
+                            "variable": "step_758_result_1",
+                            "variable_path": "body.request.url"
+                          },
+                          {
+                            "scalar": "\n\n--"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_758_result_1",
+                    "variable_path": "body.request.id"
+                  },
+                  "skill_variable": "TicketNumber"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_139",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_758_result_1",
+                  "variable_path": "success"
+                },
+                {
+                  "scalar": true
+                }
+              ]
+            },
+            "next_step": "step_236"
+          },
+          {
+            "step": "step_236",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "チケット作成に失敗しました。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_236",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_758_result_1",
+                  "variable_path": "success"
+                },
+                {
+                  "scalar": false
+                }
+              ]
+            }
+          }
+        ],
+        "title": "チケット作成",
+        "action": "action_35393",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_35393_intent_32195"
+        },
+        "variables": [
+          {
+            "title": "**チケット番号を控えておいてください。問い合わせ時に必要になります。** チケット番号: {variable} <br /> ",
+            "variable": "step_139",
+            "data_type": "any"
+          },
+          {
+            "title": "お名前を教えてください",
+            "variable": "step_166",
+            "data_type": "any"
+          },
+          {
+            "title": "チケット作成に失敗しました。",
+            "variable": "step_236",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_281_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "注文内容を登録します",
+            "variable": "step_758",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_758_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "メールアドレスを教えてください",
+            "variable": "step_769",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_917_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_43521",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_423",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "お持ち帰りで半額になります。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_423"
+          }
+        ],
+        "title": "割引条件",
+        "action": "action_42059",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_42059_intent_47096"
+        },
+        "variables": [
+          {
+            "title": "お持ち帰りで半額になります。",
+            "variable": "step_423",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_10576",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_398",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "検索したいことを入力してください\n\n※ <font color=\"DeepSkyBlue\" size=\"+2\">exit</font> と入力すると検索を終了します。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_398",
+            "next_step": "step_121"
+          },
+          {
+            "step": "step_121",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "検索を終了します"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_121",
+            "condition": {
+              "matches": [
+                {
+                  "variable": "step_398"
+                },
+                {
+                  "scalar": "exit",
+                  "options": {
+                    "ignore_case": true
+                  }
+                }
+              ]
+            },
+            "next_step": "step_682"
+          },
+          {
+            "step": "step_682",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "『<? input.text ?>』で検索します"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "search",
+              "response": {
+                "query": "",
+                "filter": "",
+                "query_type": "natural_language"
+              }
+            },
+            "variable": "step_682",
+            "condition": {
+              "not_matches": [
+                {
+                  "variable": "step_398"
+                },
+                {
+                  "scalar": "exit",
+                  "options": {
+                    "ignore_case": true
+                  }
+                }
+              ]
+            },
+            "next_step": "step_850"
+          },
+          {
+            "step": "step_850",
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_398"
+                },
+                {
+                  "variable": "step_682"
+                }
+              ]
+            },
+            "variable": "step_850"
+          }
+        ],
+        "title": "(デバッグ) 検索",
+        "action": "action_43521",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_43521_intent_34851"
+        },
+        "variables": [
+          {
+            "title": "検索を終了します",
+            "variable": "step_121",
+            "data_type": "any"
+          },
+          {
+            "title": "検索したいことを入力してください ※ <font color=\"DeepSkyBlue\" size=\"+2\">exit</fon",
+            "variable": "step_398",
+            "data_type": "any"
+          },
+          {
+            "title": "『<? input.text ?>』で検索します",
+            "variable": "step_682",
+            "data_type": "any"
+          },
+          {
+            "title": "No response",
+            "variable": "step_850",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_13238",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_367",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "ご注文はいただいておりません。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_367",
+            "condition": {
+              "and": [
+                {
+                  "not": {
+                    "exists": {
+                      "skill_variable": "pizza"
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "exists": {
+                      "skill_variable": "size"
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "exists": {
+                      "skill_variable": "time"
+                    }
+                  }
+                }
+              ]
+            },
+            "next_step": "step_595"
+          },
+          {
+            "step": "step_595",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "ご注文のキャンセルですね。\n\n注文内容\n\n-ピザの種類="
+                          },
+                          {
+                            "skill_variable": "pizza"
+                          },
+                          {
+                            "scalar": "\n\n-サイズ="
+                          },
+                          {
+                            "skill_variable": "size"
+                          },
+                          {
+                            "scalar": "\n\n-配達時刻="
+                          },
+                          {
+                            "skill_variable": "time"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "キャンセルします",
+                      "value": {
+                        "input": {
+                          "text": "キャンセルします"
+                        }
+                      }
+                    },
+                    {
+                      "label": "キャンセルしません",
+                      "value": {
+                        "input": {
+                          "text": "キャンセルしません"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "分かりませんでした。有効なオプションを選択してください:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_41879",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_595",
+            "next_step": "step_525"
+          },
+          {
+            "step": "step_525",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "ご注文をキャンセルしました。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "null"
+                  },
+                  "skill_variable": "pizza"
+                },
+                {
+                  "value": {
+                    "expression": "null"
+                  },
+                  "skill_variable": "size"
+                },
+                {
+                  "value": {
+                    "expression": "null"
+                  },
+                  "skill_variable": "time"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_525",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_595"
+                },
+                {
+                  "value": "キャンセルします",
+                  "from_entity": "entity_41879"
+                }
+              ]
+            },
+            "next_step": "step_570"
+          },
+          {
+            "step": "step_570",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "予定通り "
+                          },
+                          {
+                            "skill_variable": "time"
+                          },
+                          {
+                            "scalar": " にお届け予定です。もうしばらくお待ちください。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_570",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_595"
+                },
+                {
+                  "value": "キャンセルしません",
+                  "from_entity": "entity_41879"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "注文のキャンセル",
+        "action": "action_6727",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_6727_intent_5755"
+        },
+        "variables": [
+          {
+            "title": "ご注文はいただいておりません。",
+            "variable": "step_367",
+            "data_type": "any"
+          },
+          {
+            "title": "ご注文をキャンセルしました。",
+            "variable": "step_525",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_525_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "予定通り {variable} にお届け予定です。もうしばらくお待ちください。",
+            "variable": "step_570",
+            "data_type": "any"
+          },
+          {
+            "title": "ご注文のキャンセルですね。 注文内容 -ピザの種類={variable} -サイズ={variable} -配達時刻={vari",
+            "variable": "step_595",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_42059",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "『<? input.text ?>』で検索します"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "search_and_end_action",
+              "response": {
+                "query": "",
+                "filter": "",
+                "query_type": "natural_language"
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": "10"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No action matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "『<? input.text ?>』で検索します",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "申し訳ございません。分かりませんでした。エージェントにお取り次ぎできます。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "利用できるエージェントに転送いたします。"
+                },
+                "agent_unavailable": {
+                  "message": "現時点で利用できるエージェントはありません。利用できるようになったら、お取り次ぎいたします。"
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "お役に立てず申し訳ありません。すぐにエージェントにお取り次ぎいたします。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "利用できるエージェントに転送いたします。"
+                },
+                "agent_unavailable": {
+                  "message": "現時点で利用できるエージェントはありません。利用できるようになったら、お取り次ぎいたします。"
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "申し訳ありませんが、お尋ねの件が分かりません。エージェントにお取り次ぎいたします。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "利用できるエージェントに転送いたします。"
+                },
+                "agent_unavailable": {
+                  "message": "現時点で利用できるエージェントはありません。利用できるようになったら、お取り次ぎいたします。"
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "申し訳ございません。分かりませんでした。エージェントにお取り次ぎできます。",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "お役に立てず申し訳ありません。すぐにエージェントにお取り次ぎいたします。",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "申し訳ありませんが、お尋ねの件が分かりません。エージェントにお取り次ぎいたします。",
+            "variable": "step_003",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "いらっしゃいませ。ご用件をお伺いいたします。"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "いらっしゃいませ。ご用件をお伺いいたします。",
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_35393",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_10576_intent_15035",
+        "examples": [
+          {
+            "text": "オーダーしたいのですが"
+          },
+          {
+            "text": "おすすめが知りたい"
+          },
+          {
+            "text": "お腹がすいた"
+          },
+          {
+            "text": "ここで注文できるの"
+          },
+          {
+            "text": "マルゲリータが食べたい"
+          },
+          {
+            "text": "注文"
+          }
+        ]
+      },
+      {
+        "intent": "action_13238_intent_5472",
+        "examples": [
+          {
+            "text": "有人エージェント"
+          },
+          {
+            "text": "注文内容を変更したい"
+          },
+          {
+            "text": "追加注文があります"
+          },
+          {
+            "text": "配達時刻を変更したい"
+          }
+        ]
+      },
+      {
+        "intent": "action_35393_intent_32195",
+        "examples": [
+          {
+            "text": "チケット作成"
+          }
+        ]
+      },
+      {
+        "intent": "action_42059_intent_47096",
+        "examples": [
+          {
+            "text": "お持ち帰りで安くなりますよね"
+          },
+          {
+            "text": "クーポンはありますか"
+          },
+          {
+            "text": "割引条件"
+          }
+        ]
+      },
+      {
+        "intent": "action_43521_intent_34851",
+        "examples": [
+          {
+            "text": "Search"
+          },
+          {
+            "text": "検索"
+          }
+        ]
+      },
+      {
+        "intent": "action_6727_intent_5755",
+        "examples": [
+          {
+            "text": "オーダーをキャンセルしたい"
+          },
+          {
+            "text": "取り消したい"
+          },
+          {
+            "text": "注文のキャンセル"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "カスタマーセンターに繋げることは出来ますか？"
+          },
+          {
+            "text": "この案件の担当者に電話して。"
+          },
+          {
+            "text": "ヘルプセンターに繋げてください"
+          },
+          {
+            "text": "担当者と直接話しをしたい"
+          },
+          {
+            "text": "担当者に繋げて欲しい"
+          }
+        ],
+        "description": "人間のエージェント要求します"
+      }
+    ],
+    "entities": [
+      {
+        "entity": "entity_18964",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "シーフード",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "ペパロニ",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "マルゲリータ",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_36729",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "OK",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "修正",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_41879",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "キャンセルします",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "キャンセルしません",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_48463",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Lサイズ",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Mサイズ",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Sサイズ",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-number",
+        "values": []
+      },
+      {
+        "entity": "sys-time",
+        "values": []
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [
+      {
+        "title": "CustomerEmail",
+        "variable": "CustomerEmail",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "CustomerName",
+        "variable": "CustomerName",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "CustomerTel",
+        "variable": "CustomerTel",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "pizza",
+        "variable": "pizza",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "size",
+        "variable": "size",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "TicketNumber",
+        "variable": "TicketNumber",
+        "data_type": "number",
+        "description": ""
+      },
+      {
+        "title": "time",
+        "variable": "time",
+        "data_type": "time",
+        "description": ""
+      }
+    ],
+    "data_types": [],
+    "counterexamples": [],
+    "system_settings": {
+      "nlp": {
+        "model": "beta"
+      },
+      "launch_mode": {},
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "confirm_return": {
+            "text": ""
+          },
+          "confirm_switch": {
+            "text": ""
+          }
+        },
+        "question_steps_threshold": 2
+      },
+      "disambiguation": {
+        "prompt": "以下でよろしかったでしょうか:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "上記のいずれでもありません"
+      },
+      "intent_classification": {
+        "training_backend_version": "v2"
+      }
+    },
+    "learning_opt_out": false
+  },
+  "description": "created for assistant 2f505221-0b0c-40c7-9f32-d8e558ebe99f",
+  "assistant_id": "0767b8fd-2905-4903-9663-fb0591a37865",
+  "workspace_id": "f3a24c3f-2c42-41b3-bcff-a10d8703a49b",
+  "dialog_settings": {},
+  "next_snapshot_version": "1"
+}
